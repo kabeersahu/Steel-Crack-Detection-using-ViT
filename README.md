@@ -1,12 +1,12 @@
-# Steel-Crack-Detection-using-ViT
-🧠 Steel Crack Detection using Vision Transformers (ViT)
+# 🧠 Steel Crack Detection using Vision Transformers (ViT)
 <p align="center"> <img src="confusion_matrix.png" width="600" alt="Confusion Matrix"/> </p>
-📖 Introduction
+
+## 📖 Introduction
 
 Steel surfaces in industries like shipbuilding, automotive, and infrastructure often develop cracks from fatigue, stress, or corrosion.
 This project leverages Vision Transformers (ViT) for automated crack detection, achieving higher precision, recall, and generalization compared to CNN-based methods.
 
-🎯 Problem Statement
+## 🎯 Problem Statement
 
 Manual inspection is time-consuming & error-prone
 
@@ -14,7 +14,7 @@ Traditional methods fail for fine cracks or variable lighting
 
 Aim: build a robust ViT model to classify steel patches into Crack / No Crack
 
-📂 Dataset
+## 📂 Dataset
 
 Patch Size: 512×512 px
 
@@ -28,7 +28,7 @@ Crack: ~3,540
 
 No Crack: ~51,397 (imbalanced)
 
-⚙️ Methodology
+##⚙️ Methodology
 
 Preprocessing: Resize (384×384), normalization
 
@@ -40,7 +40,7 @@ Model: ViT-B/16 (ImageNet-1K pretrained) + binary classifier head
 
 Optimizer: Adam (lr=1e-4) + ReduceLROnPlateau scheduler
 
-🏋️ Training Setup
+## 🏋️ Training Setup
 
 Epochs: 15
 
@@ -50,7 +50,7 @@ Device: CUDA GPU
 
 Metrics: Precision, Recall, F1-score, Accuracy, Confusion Matrix
 
-📊 Results
+## 📊 Results
 
 Classification Report
 
@@ -62,7 +62,8 @@ Crack    → Precision: 0.92 | Recall: 0.94 | F1: 0.93
 ✅ False negatives reduced vs CNN baseline
 
 <p align="center"> <img src="confusion_matrix.png" width="400"/> </p>
-💡 Key Insights
+
+## 💡 Key Insights
 
 ViT achieves higher recall → fewer missed cracks
 
@@ -70,7 +71,7 @@ Stronger generalization vs CNNs
 
 Trade-off: longer training & higher GPU usage
 
-🚀 Future Scope
+## 🚀 Future Scope
 
 Real-time crack detection in video streams
 
@@ -80,7 +81,7 @@ Multi-defect detection (beyond cracks)
 
 Hybrid CNN–ViT for faster inference
 
-🛠️ Tech Stack
+## 🛠️ Tech Stack
 
 Python, PyTorch, TorchVision, timm
 
@@ -90,6 +91,6 @@ scikit-learn, matplotlib, seaborn
 
 CUDA for training acceleration
 
-🏆 Resume Highlight
+## 🏆 Resume Highlight
 
 “Developed a ViT-based crack detection pipeline with focal loss, balanced sampling, and augmentation — achieving 94% recall on cracks while reducing false negatives compared to CNNs.”
