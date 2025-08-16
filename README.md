@@ -15,6 +15,8 @@ Traditional methods fail for fine cracks or variable lighting
 Aim: build a robust ViT model to classify steel patches into Crack / No Crack
 
 ## 📂 Dataset
+[Open GitHub](https://github.com)
+
 
 Patch Size: 512×512 px
 
