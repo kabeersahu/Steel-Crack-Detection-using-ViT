@@ -56,7 +56,6 @@ Metrics: Precision, Recall, F1-score, Accuracy, Confusion Matrix
 
 This script is designed for the **training** phase and incorporates several advanced techniques to create a more effective and reliable model.
 
-# I LIKE THESE 2 OF YOUR RESPONSES COMBINE THEM TO...
 
 | Feature | Technical Detail | Human Interviewer Explanation |
 | :--- | :--- | :--- |
