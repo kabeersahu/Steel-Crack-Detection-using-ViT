@@ -57,7 +57,7 @@ Metrics: Precision, Recall, F1-score, Accuracy, Confusion Matrix
 This script is designed for the **training** phase and incorporates several advanced techniques to create a more effective and reliable model.
 
 
-| Feature | Technical Detail | Human Interviewer Explanation |
+| Feature | Technical Detail | Why It's Important |
 | :--- | :--- | :--- |
 | Model Architecture | The model is a pre-trained Vision Transformer (ViT-B/16) from torchvision. The classification head is a linear layer with num_classes=1. The input image size is explicitly set to 384x384.  | A powerful model that learns global relationships in images. Using a pre-trained model speeds up training and improves performance.  |
 | Data Augmentation | Uses transforms.Compose with geometric transformations like RandomHorizontalFlip(), RandomRotation(10), and RandomPerspective(), as well as photometric ColorJitter().  | Creates a larger, more diverse training set from the same data By randomly flipping, rotating, and altering colors, we ensure the model learns to identify cracks under different angles and lighting conditions, making the model more robust and less prone to overfitting. |
@@ -70,7 +70,7 @@ This script is designed for the **training** phase and incorporates several adva
 
 This script is dedicated to the **evaluation** and **visualization** of a trained model. It's used after `STEP 3` to gain a deeper understanding of the model's performance.
 
-| Feature | Technical Detail | Human Interviewer Explanation |
+| Feature | Technical Detail | Why It's Important |
 | :--- | :--- | :--- |
 | Model Loading | The script loads the model and its saved state dictionary (vit_crack_detection.pth) using torch.load(). | We separate training and evaluation for a cleaner workflow. This allows us to load our pre-trained model and test it on new data without having to run the entire training process again.  |
 | Performance Metrics | It calculates accuracy and generates a classification_report from sklearn.metrics, providing per-class metrics such as precision, recall, and F1-score. | We get more than just a simple accuracy score. This report tells us how reliable our model is at finding cracks (precision) and how many cracks it actually finds (recall), which is vital for knowing if it's fit for the job.  |
