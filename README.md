@@ -52,6 +52,27 @@ Device: CUDA GPU
 
 Metrics: Precision, Recall, F1-score, Accuracy, Confusion Matrix
 
+## **Key Features of `STEP 3 UPGRADED(training).py`**
+
+This script is designed for the **training** phase and incorporates several advanced techniques to create a more effective and reliable model.
+
+* **Advanced Data Augmentation**: It uses a rich set of transformations to diversify the training data, including `RandomHorizontalFlip`, `RandomRotation`, `ColorJitter`, `RandomAffine`, and `RandomPerspective`. This helps the model generalize better to new, unseen images and reduces overfitting.  
+* **Focal Loss Implementation**: The script uses a custom `FocalLoss` function, which is particularly effective for highly imbalanced datasets like crack detection, where "no crack" samples far outnumber "crack" samples. This loss function down-weights the contribution of easy-to-classify examples, forcing the model to focus on the more difficult ones.  
+* **Class Imbalance Handling**: To directly address the class imbalance, it uses a `WeightedRandomSampler` to ensure that both crack and no-crack images are represented more equally in each training batch. This is a more proactive approach than simply adjusting the loss weight.  
+* **Dynamic Learning Rate**: The script includes a `ReduceLROnPlateau` scheduler, which automatically decreases the learning rate when the training loss stops improving. This helps the model converge more effectively to a better solution.  
+* **Comprehensive Evaluation**: After training, it evaluates the model's performance by generating a classification report and a confusion matrix heatmap, providing a clear visual summary of its accuracy, precision, recall, and F1-score.
+
+
+## **Key Features of `step 4(evaluation and visualisation ).py`**
+
+This script is dedicated to the **evaluation** and **visualization** of a trained model. It's used after `STEP 3` to gain a deeper understanding of the model's performance.
+
+* **Model Loading and Evaluation**: It loads a pre-trained model and evaluates it on the test dataset. The script calculates and prints the overall test accuracy, providing a quick performance metric.  
+* **Detailed Performance Metrics**: It generates and prints a comprehensive **classification report**, which includes precision, recall, and F1-score for both "No Crack" and "Crack" classes. This is crucial for understanding how the model performs on each class individually, especially given the dataset's imbalance.  
+* **Confusion Matrix Visualization**: The script creates and displays a **confusion matrix** using `ConfusionMatrixDisplay` from `sklearn`. This visual representation breaks down the model's predictions into true positives, true negatives, false positives, and false negatives, which is essential for diagnosing specific types of errors.  
+* **Sample Prediction Visualization**: It visualizes a small number of sample images from the test set, displaying the true label and the model's predicted label. This provides an intuitive and qualitative look at how the model performs on individual examples, showing both correct and incorrect predictions.
+
+
 ## 📊 Results
 
 Classification Report
